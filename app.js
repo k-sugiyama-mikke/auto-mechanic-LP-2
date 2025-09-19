@@ -412,6 +412,8 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
 
+    formData.lpRoute = "auto-mechanic-2";
+
     return formData;
   }
 
