@@ -1,0 +1,1113 @@
+body {
+  font-family: sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  line-height: 1.2; /* 行間の調整（任意） */
+  font-size: 16px; /* 基本の文字サイズ */
+  color: #121212;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.body-space {
+  flex: 1;
+}
+
+/* 600px以上 */
+@media (min-width: 600px) {
+  body {
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .body-inner {
+    width: 600px;
+    /* border: 1px solid #f5f5f5; */
+    box-shadow: 0 0 20px 10px rgba(198, 198, 198, 0.2);
+  }
+}
+
+/****************************************
+ヘッダー
+*****************************************/
+.mechanic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.service-logo {
+  width: 60px;
+}
+
+.permission-number {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/***************************
+最新日時
+***************************/
+.current-job-date__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a47ab;
+  color: #fff;
+}
+
+.current-job-date {
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 0.4rem 0;
+  letter-spacing: 1.3px;
+}
+
+/****************************************
+ダイアログ（お気持ちはどちらに近いですか？
+*****************************************/
+.intension-dialog {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(24, 24, 24, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intension-dialog.invisible {
+  display: none;
+}
+
+.intension-dialog__inner {
+  position: absolute;
+  top: 30%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fafafa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px 4px rgb(218 218 218 / 50%);
+}
+
+.intension-dialog__inner__content {
+  padding: 2rem 2rem 3rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.intension-dialog__button-upper {
+  background-color: #ff7a1a;
+  margin-bottom: 1rem;
+  width: 100%;
+  color: #fff;
+  border: none;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0px 3px 0px rgba(199 86 4);
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.intension-dialog__button-upper:hover {
+  background-color: #d86716;
+  box-shadow: 0px 3px 0px rgb(148, 63, 3);
+  transform: translateY(-2px);
+}
+
+.intension-dialog__button-upper::before {
+  content: "";
+  position: absolute;
+  inset: -20% -40%; /* 少し大きめにして光の端が切れないように */
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  z-index: 2;
+  pointer-events: none;
+  animation: shineX 1.8s ease-in-out infinite; /* ← 常時ループ */
+}
+
+.intension-dialog__button-bottom {
+  background-color: #4caf50;
+  width: 100%;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: normal;
+  box-shadow: 0px 3px 0px rgb(8 143 14);
+  transition: 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.intension-dialog__button-bottom::before {
+  content: "";
+  position: absolute;
+  inset: -20% -40%; /* 少し大きめにして光の端が切れないように */
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  z-index: 2;
+  pointer-events: none;
+  animation: shineX 1.8s ease-in-out infinite; /* ← 常時ループ */
+}
+
+.intension-dialog__button-bottom:hover {
+  background-color: #3f9142;
+  box-shadow: 0px 3px 0px rgb(6, 119, 11);
+
+  transform: translateY(-1px);
+}
+
+.intension-dialog__title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #5d5d5d;
+}
+
+.intension-dialog button {
+  padding: 1.5rem 1rem;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.intension-dialog button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+.intension-dialog button:active {
+  transform: scale(0.98);
+}
+
+.intension-dialog__coution {
+  padding: 0.8rem 0;
+  color: #fff;
+  background-color: #004ea2;
+  text-align: center;
+  font-size: 0.8rem;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intension-dialog__coution img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+/****************************************
+ローディング
+*****************************************/
+.loading {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(70, 70, 70, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading.invisible {
+  display: none;
+}
+
+.spiner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid rgba(255, 255, 255, 0.35); /* 薄い白の輪郭 */
+  border-top-color: #fff; /* 上だけ白くして回転 */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/****************************************
+ファーストビュー
+*****************************************/
+
+.mechanic-first-view {
+  width: 100%;
+  height: 150px;
+  background-image: url("./img/fv-background-1.avif");
+  background-size: cover; /* 横幅いっぱいに表示＋縦横比を維持 */
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  background-position: center; /* 中央に配置 */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.mechanic-first-view::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.7;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.mechanic-first-view.invisible {
+  display: none;
+}
+
+.mechanic-first-view__human-img {
+  width: 140px;
+  position: absolute;
+  right: 5%;
+  bottom: -27%;
+}
+
+.mechanic-first-view__inner h1 {
+  z-index: 2;
+  position: relative;
+  text-shadow: 3px 3px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555,
+    1px 1px 0 #555555;
+  color: #fff;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-left: 0.8rem;
+}
+
+/***************
+プログレスバー
+****************/
+.progress-container {
+  width: 70%;
+  height: 8px;
+  background: #ddd;
+  z-index: 10;
+  border-radius: 30px;
+  position: relative;
+}
+
+.progress-container-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress-text {
+  margin-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 0%;
+  background: #007bff;
+  transition: width 0.3s ease;
+  position: relative;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+}
+
+.progress-bar:after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("./img/progress-bar-icon.webp");
+  background-size: cover; /* 横幅いっぱいに表示＋縦横比を維持 */
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  background-position: center; /* 中央に配置 */
+  width: 60px;
+  height: 30px;
+  z-index: 1;
+}
+
+.progress-container-wrapper {
+  margin-top: 1rem;
+}
+
+.progress-steps {
+  font-weight: bold;
+}
+
+/*******************************
+フォーム
+********************************/
+.form-wrapper {
+  background: #fff;
+  border-radius: 10px;
+  padding-top: 1px;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  padding: 0 10px;
+}
+
+#multiStepForm {
+  display: flex;
+  width: 100%;
+  transition: all 0.1s ease;
+  align-items: flex-start;
+}
+
+.form-container {
+  /* position: relative; */
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-step {
+  /* position: absolute;
+  top: 0;
+  left: 100%; */
+  width: 100%;
+  flex-shrink: 0;
+  opacity: 0;
+  display: none;
+}
+
+.form-step.active {
+  opacity: 1;
+  display: block;
+}
+
+.form-step.back-slide {
+  opacity: 0;
+  display: none;
+}
+
+.form-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.form-label {
+  display: block;
+  margin: 10px 0;
+}
+
+.form-input__text {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-form__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-title__before {
+  width: 10px;
+  height: 10px;
+  background-color: #007bff;
+  display: block;
+  margin-right: 5px;
+}
+
+.step-3-err-msg__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.step-3-err-msg__wrapper.invisible {
+  display: none;
+}
+
+.form-step-3__coution {
+  font-size: 0.7rem;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.step-err-msg {
+  border: 1px solid #e57373;
+  width: 90%;
+  font-size: 0.6rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10rem;
+  background-color: #fdecea;
+  color: #e57373;
+  text-align: center;
+}
+
+.zip-form {
+  position: relative;
+}
+
+.tel-form {
+  position: relative;
+}
+
+/***************************
+* カウンター
+***************************/
+
+.count-wrapper {
+  position: absolute;
+  content: "";
+  padding: 0.2rem 1rem;
+  background-color: #ececec;
+  font-size: 0.7rem;
+  letter-spacing: 1.4px;
+  border-radius: 5px;
+}
+
+.count-wrapper span {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.zip-code-count-wrapper {
+  top: -10px;
+  right: 10px;
+}
+
+.tel-counter-wrapper {
+  top: -10px;
+  right: 10px;
+}
+
+/***************
+ボタン
+****************/
+.next-btn {
+  padding: 1rem 1rem;
+  /* background: #007bff; */
+  background: #ff7a1a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.next-btn.highlight {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.next-btn.highlight::before {
+  content: "";
+  position: absolute;
+  inset: -20% -40%; /* 少し大きめにして光の端が切れないように */
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  z-index: 2;
+  pointer-events: none;
+  animation: shineX 1.8s ease-in-out infinite; /* ← 常時ループ */
+}
+
+.next-btn.highlight:hover::before {
+  animation: shineX 0.5s ease;
+}
+
+@keyframes shineX {
+  to {
+    transform: translateX(150%) skewX(-20deg);
+  }
+}
+
+.next-btn.disabled {
+  pointer-events: none; /* クリックを無効化 */
+  opacity: 0.5; /* 見た目も無効化っぽくする */
+  cursor: not-allowed;
+  background: #a2a5a8;
+}
+
+.prev-btn {
+  min-width: 50px;
+  text-align: left;
+  margin-right: 20px;
+  font-size: 0.7rem;
+}
+
+.prev-btn.invisible {
+  display: none;
+}
+
+.next-btn.invisible {
+  display: none;
+}
+
+.submit-btn.invisible {
+  display: none;
+}
+
+.action-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.submit-btn {
+  padding: 0.5rem 1rem 0.8rem;
+  background: #ff7a1a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.submit-btn span {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.submit-btn.highlight {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.submit-btn.highlight::before {
+  content: "";
+  position: absolute;
+  inset: -20% -40%; /* 少し大きめにして光の端が切れないように */
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  z-index: 2;
+  pointer-events: none;
+  animation: shineX 1.8s ease-in-out infinite; /* ← 常時ループ */
+}
+
+.submit-btn.highlight:hover::before {
+  animation: shineX 0.5s ease;
+}
+
+.submit-btn.disabled {
+  pointer-events: none; /* クリックを無効化 */
+  opacity: 0.5; /* 見た目も無効化っぽくする */
+  cursor: not-allowed;
+  background: #a2a5a8;
+}
+
+.first-next-btn {
+  width: 90%;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.action-btn-inner {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-next-btn:hover {
+  background: #0056b3;
+}
+
+.form-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.form-checkbox-label {
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.05s;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.form-checkbox-wrapper {
+  width: calc(50% - 0.25rem);
+}
+
+/* チェックされたカードの見た目 */
+.form-checkbox:checked + .form-checkbox-label {
+  border-color: #007bff;
+  background-color: #d2dceb;
+  color: #007bff;
+  font-weight: bold;
+  z-index: 100;
+  position: relative;
+}
+
+.form-checkbox-img {
+  width: 55px;
+  margin-bottom: 5px;
+}
+
+.form-checkbox-img__1 {
+  width: 70px !important;
+}
+
+.form-checkbox-text {
+  font-size: 0.8rem;
+}
+
+/***************************
+フォーム（ラジオボタン）
+***************************/
+.form-radio-label {
+  margin-bottom: 0.5rem;
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+/* ラジオボタン本体は非表示に */
+.form-radio-label input[type="radio"] {
+  display: none;
+}
+
+/* 選択されているときのスタイル */
+.form-radio-label input[type="radio"]:checked + .form-radio-visible {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.form-radio-visible {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-radio__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列 */
+  gap: 0.7rem;
+}
+
+.form-screen {
+  position: relative;
+}
+
+.form-screen.dimmed:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+  z-index: 49; /* next-btn (100) より下。form-wrapper より上 */
+  pointer-events: none;
+}
+
+.form-screen.invisible {
+  display: none;
+}
+
+.next-btn.highlight {
+  position: relative;
+  z-index: 50;
+  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.8); /* 黄色っぽい光で強調 */
+  /* box-shadow: 0 0 10px 4px rgba(255, 255, 0, 0.8);  */
+  transition: box-shadow 0.3s ease;
+}
+
+.submit-btn.highlight {
+  position: relative;
+  z-index: 50;
+  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.8); /* 黄色っぽい光で強調 */
+  /* box-shadow: 0 0 10px 4px rgba(255, 255, 0, 0.8);  */
+  transition: box-shadow 0.3s ease;
+}
+
+/* ふわふわアニメーション */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hand-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("./img/tap.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  animation: float 1.5s ease-in-out infinite;
+  z-index: 99;
+
+  /* ✅ 初期表示位置（任意） */
+  top: 20px;
+  left: 0;
+
+  /* ✅ 移動をスムーズに */
+  transition: top 0.5s ease, left 0.5s ease;
+}
+
+.hand-icon.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/***************************
+求人スライダー
+***************************/
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #fdf6f6;
+  box-shadow: 1px 2px 7px #e5e0e0;
+  padding-top: 0.5rem;
+}
+
+.slider-wrapper.invisible {
+  display: none;
+}
+
+.slider-header {
+  margin-bottom: 0.4rem;
+  display: block;
+  font-size: 0.8rem;
+}
+
+.slider-header img {
+  width: 15px;
+  margin-right: 5px;
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 0.3rem;
+}
+
+.slide-content__job {
+  font-size: 0.7rem;
+}
+
+.slide-content__money {
+  font-size: 0.7rem;
+  color: rgb(255, 0, 0);
+}
+
+.slider-track {
+  display: flex;
+  gap: 10px; /* marginの代わりにgap推奨（幅計算が安定） */
+  width: max-content;
+  animation: scroll-left 50s linear infinite; /* 好きな秒数に */
+  will-change: transform;
+}
+
+.slide {
+  flex: 0 0 auto; /* 縮まないよう固定（重要） */
+  width: 130px; /* max-width ではなく固定幅に */
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.08);
+}
+
+.slide-img {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  } /* 前半＝後半なのでピタッと繋がる */
+}
+
+/***************************
+フッター
+***************************/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0;
+  font-size: 0.6rem;
+  background-color: #1a47ab;
+  color: #fff;
+}
+
+.footer-upper ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+
+.footer-upper li:first-child {
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/***************************
+利用規約と会社概要
+***************************/
+.display-dialog.invisible {
+  position: fixed; /* ← absolute から fixed に */
+  inset: 0; /* top/left/width/height をまとめて指定 */
+  background-color: rgba(24, 24, 24, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 背景のスクロールを遮断 */
+}
+
+.display-dialog {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(24, 24, 24, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-dialog.invisible {
+  display: none;
+}
+
+.display-dialog__inner {
+  width: min(90%, 720px);
+  max-height: 70vh; /* ← ここがキモ。親が高さ制約を持つ */
+  background-color: #fafafa;
+  border-radius: 10px;
+  display: flex; /* ヘッダー + スクロール領域の縦積み */
+  flex-direction: column;
+  overflow: hidden; /* 角丸内に収める */
+  position: relative; /* absolute である必要なし */
+  padding-bottom: 1.5rem;
+  z-index: 120;
+}
+
+.display-dialog__inner__content {
+  /* height: 100%; は消す！親の高さが auto だと 100% が効かない */
+  flex: 1; /* 余った高さを占有 */
+  min-height: 0; /* ← flex 子のはみ出し対策（重要） */
+  overflow: auto; /* 必要なときだけスクロールバー */
+  padding: 0.5rem 1.5rem 1rem 1.5rem;
+  -webkit-overflow-scrolling: touch; /* iOS の慣性スクロール */
+  font-size: 0.6rem;
+}
+
+.display-dialog__title {
+  padding: 12px 16px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  background: #fafafa; /* スクロール時の透け防止 */
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-dialog-close {
+  position: absolute;
+  content: "";
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  pointer-events: auto;
+}
+
+.display-dialog__title img {
+  margin-right: 0.2rem;
+  width: 20px;
+}
+
+.terms-dialog.invisible {
+  display: none;
+}
+
+.company-dialog.invisible {
+  display: none;
+}
+
+.company-profile {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 1.7;
+}
+.company-profile caption {
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 0.6rem;
+}
+.company-profile th,
+.company-profile td {
+  border: 1px solid #e5e5e5;
+  padding: 0.8rem 1rem;
+  vertical-align: top;
+}
+.company-profile th {
+  width: 28%;
+  background: #fafafa;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/***************************
+* 訴求ラベル（ヘッダー下）
+***************************/
+
+.offer-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.offer-label.invisible {
+  display: none;
+}
