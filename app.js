@@ -653,6 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nameValue = document.getElementById("name").value.trim();
     const telValue = document.getElementById("tel").value.trim();
+    const emailValue = document.getElementById("email").value.trim();
 
     const telLength = telValue.length;
     telCouter.textContent = 11 - telLength;
@@ -674,7 +675,25 @@ document.addEventListener("DOMContentLoaded", () => {
       return res;
     }
 
+    if (emailValue.length > 0) {
+      if (!isValidEmail(emailValue)) {
+        res.result = false;
+        res.msg = "正しいメールアドレスを入力してください";
+        return res;
+      }
+    }
+
     return res;
+  }
+
+  /**
+   * メールアドレスのバリデーション
+   * @param {*} email
+   * @returns boolean
+   */
+  function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
   }
 
   /**
