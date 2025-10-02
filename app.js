@@ -627,9 +627,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const nameInput = document.getElementById("name");
   const telInput = document.getElementById("tel");
   const telCouter = document.getElementById("tel-counter");
+  const emailInput = document.getElementById("email");
 
   // イベント設定
-  [nameInput, telInput].forEach((input) => {
+  [nameInput, telInput, emailInput].forEach((input) => {
     input.addEventListener("input", () => {
       const validate = validateFormFourQuestion();
       const isLastPage = true;
