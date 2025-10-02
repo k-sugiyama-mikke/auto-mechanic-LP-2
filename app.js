@@ -364,6 +364,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputs = form.querySelectorAll("input");
     const formData = {};
     const params = new URLSearchParams(window.location.search);
+    //trueの時はテストモード（reCAPTCHA無効）
+    formData["localTest"] = true;
 
     inputs.forEach((input) => {
       const name = input.name;
