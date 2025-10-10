@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
         prevBtn.classList.remove("invisible");
         nextBtn.classList.add("invisible");
         submitBtn.classList.remove("invisible");
-        slider.classList.remove("invisible");
+        slider.classList.add("invisible");
 
         let validate = validateFormFourQuestion();
         fireConversion(4);
