@@ -384,6 +384,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    const prefectureSelectArea = document.getElementById("prefecture");
+    formData["prefecture"] = prefectureSelectArea.value;
+
     const utmSource =
       new URLSearchParams(window.location.search).get("utm_source") || "";
     const nowPlatform =
@@ -398,6 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.metaAdId = params.get("utm_ad_id") || "";
         formData.metaCampaignId = params.get("utm_campaign_id") || "";
         formData.metaCampainName = params.get("utm_campaign") || "";
+        formData.metaAdName = params.get("ad_name") || "";
 
         break;
       case "google":
@@ -580,9 +584,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const zipCodeInput = document.getElementById("zip-code");
   const birthInput = document.getElementById("birth");
   const zipCodeCounter = document.getElementById("zip-code-counter");
+  const prefectureInput = document.getElementById("prefecture");
 
-  // イベント設定
-  [zipCodeInput, birthInput].forEach((input) => {
+  [
+    // イベント設定
+    zipCodeInput,
+    birthInput,
+  ].forEach((input) => {
     input.addEventListener("input", () => {
       if (validateFormThirdQuestion()) {
         addDecorationAfterInputComplete();
@@ -595,6 +603,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // 都道府県セレクトボックス
+  prefectureInput.addEventListener("change", () => {
+    if (validateFormThirdQuestion()) {
+      addDecorationAfterInputComplete();
+      nextBtnInvalidationCancel();
+      targetBtnScroll("next-btn");
+    } else {
+      deleteDecorationAfterInputComplete();
+      nextBtnDisabled();
+    }
+  });
+
+  /**
+   * 郵便番号が該当しない場合のセレクトボックス
+   */
+  const notZipTrigger = document.getElementById("not-zip");
+  const notZipSelectBox = document.getElementById("not-zip-selectBox");
+
+  notZipTrigger.addEventListener("click", () => {
+    const open = notZipSelectBox.classList.toggle("open");
+    notZipTrigger.classList.toggle("is-open", open);
+    notZipTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
   /**
    * フォーム3問目のバリデーションチェック
    */
@@ -603,6 +635,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const zipCode = zipCodeInput.value.trim();
     const birth = birthInput.value.trim();
     const zipCodeLength = zipCode.length;
+    const prefecture = prefectureInput.value.trim();
 
     if (zipCodeCounter) {
       zipCodeCounter.textContent = 7 - zipCodeLength;
@@ -614,6 +647,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (zipCodeValid && birthValid) {
       result = true;
+      return result;
+    }
+
+    if (!zipCodeValid) {
+      if (prefecture != "" && prefecture != "選択してください") {
+        if (birthValid) {
+          result = true;
+        }
+      }
     }
 
     return result;
