@@ -86,6 +86,11 @@ FV（オペレーターのメッセージ）
   gap: 2rem;
   margin-top: 1.2rem;
 }
+
+.operater-zone.invisible {
+  display: none;
+}
+
 .operater-box {
   /* display: flex;
   align-items: center; */
@@ -146,6 +151,54 @@ FV（オペレーターのメッセージ）
 }
 
 /****************************************
+3枚目のオペレーター
+*****************************************/
+
+.operater-zone-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.operater-message-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 1;
+}
+
+.operater-message-area {
+  background-color: #efefef;
+  padding: 0.6rem 0.5rem 0.7rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.operater-message-area::before {
+  position: absolute;
+  top: 23px;
+  left: -17px;
+  content: "";
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 20px solid #efefef; /* 色をここで指定 */
+  z-index: -1;
+}
+
+.operater-message-area span {
+  color: #d32f2f;
+}
+
+/****************************************
 FV（ボタン）
 *****************************************/
 .fv-btn-wrapper {
@@ -154,6 +207,10 @@ FV（ボタン）
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.fv-btn-wrapper.invisible {
+  display: none;
 }
 
 .fv-btn-inner {

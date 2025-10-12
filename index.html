@@ -65,9 +65,8 @@
 		</header>
 
 		<div class="current-job-date__wrapper">
-			<div class="current-job-date"><span id="current-job-date"></span> 最終求人更新</div>
+			<div class="current-job-date"><span id="current-job-date"></span> 最終求人更新　非公開求人も多数あり！</div>
 		</div>
-		<div id="offer-label" class="offer-label invisible">ハローワーク非公開求人も多数紹介中！！</div>
 		<div id="mechanic-first-view" class="mechanic-first-view">
 			<div class="mechanic-first-view__inner">
 				<img src="./img/top-fv.png" alt="" class="mechanic-first-view__human-img" width="140" height="auto"
@@ -75,7 +74,7 @@
 			</div>
 		</div>
 
-		<div class="operater-zone">
+		<div id="operater-zone" class="operater-zone">
 			<div class="operater-box">
 				<img src="./img/operater.png" alt="キャリアアドバイザーの写真" id="operater-img" class="operater-img" width="80" height="80"
 					decoding="async" />
@@ -90,9 +89,8 @@
 					お気持ちはどちらに近いですか？
 				</div>
 			</div>
-
 		</div>
-		<div class="fv-btn-wrapper">
+		<div id="fv-btn-wrapper" class="fv-btn-wrapper">
 			<div class="fv-btn-inner">
 				<button id="fv-btn-upper" type="button" class="fv-btn-upper">近いうちに転職したい</button>
 				<button id="fv-btn-bottom" type="button" class="fv-btn-bottom">今は情報収集したい</button>
@@ -294,10 +292,26 @@
 						<!-- Step 3 -->
 						<div id="form-step-3" class="form-step">
 							<div id="step-3-err-msg__wrapper" class="step-3-err-msg__wrapper">
-								<span id="step-3-err-msg" class="step-err-msg">
+								<!-- <span class="form-step-3__coution">※個人情報は公開されません</span> -->
+								<div id="operater-zone-area" class="operater-zone-area">
+									<div class="operater-box">
+										<img src="./img/operater.png" alt="キャリアアドバイザーの写真" id="operater-img" class="operater-img" width="80"
+											height="80" decoding="async" />
+									</div>
+									<div class="operater-message-box">
+										<div class="operater-message-area">
+											ご希望エリアの求人をお探しします😊<br>
+											<br>
+											<span>
+												個人情報は厳重に管理していますので、ご安心ください。</span>
+										</div>
+									</div>
+								</div>
+								<!-- <span id="step-3-err-msg" class="step-err-msg">
 									郵便番号は7桁、生まれ年は4桁の数字で入力してください
-								</span>
-								<span class="form-step-3__coution">※個人情報は公開されません</span>
+								</span> -->
+
+
 							</div>
 							<div class="form-step__inner">
 								<div class="form-step__box">

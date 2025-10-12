@@ -93,46 +93,92 @@ document.addEventListener("DOMContentLoaded", () => {
   /**
    * ファーストモーダル（上のボタン）
    */
-  document
-    .querySelector("#intension-dialog__button-upper")
-    .addEventListener("click", () => {
-      const intensionDialog = document.getElementById("intension-dialog");
-      const mechanicFirstView = document.getElementById("mechanic-first-view");
-      const form = document.getElementById("form-screen");
-      const slider = document.getElementById("slider");
-      const currentPlan = document.getElementById("current-plan");
-      currentPlan.value = "近いうちに転職したい";
-      const offerLabel = document.getElementById("offer-label");
+  //   document
+  //     .querySelector("#intension-dialog__button-upper")
+  //     .addEventListener("click", () => {
+  //       const intensionDialog = document.getElementById("intension-dialog");
+  //       const mechanicFirstView = document.getElementById("mechanic-first-view");
+  //       const form = document.getElementById("form-screen");
+  //       const slider = document.getElementById("slider");
+  //       const currentPlan = document.getElementById("current-plan");
+  //       currentPlan.value = "近いうちに転職したい";
+  //       const offerLabel = document.getElementById("offer-label");
 
-      intensionDialog.classList.add("invisible");
-      mechanicFirstView.classList.add("invisible");
-      form.classList.remove("invisible");
-      slider.classList.add("invisible");
-      offerLabel.classList.remove("invisible");
-      fireConversion(1);
-    });
+  //       intensionDialog.classList.add("invisible");
+  //       mechanicFirstView.classList.add("invisible");
+  //       form.classList.remove("invisible");
+  //       slider.classList.add("invisible");
+  //       offerLabel.classList.remove("invisible");
+  //       fireConversion(1);
+  //     });
 
   /**
    * ファーストモーダル（下のボタン）
    */
-  document
-    .querySelector("#intension-dialog__button-bottom")
-    .addEventListener("click", () => {
-      const intensionDialog = document.getElementById("intension-dialog");
-      const mechanicFirstView = document.getElementById("mechanic-first-view");
-      const form = document.getElementById("form-screen");
-      const slider = document.getElementById("slider");
-      const currentPlan = document.getElementById("current-plan");
-      currentPlan.value = "今は情報収集したい";
-      const offerLabel = document.getElementById("offer-label");
+  //   document
+  //     .querySelector("#intension-dialog__button-bottom")
+  //     .addEventListener("click", () => {
+  //       const intensionDialog = document.getElementById("intension-dialog");
+  //       const mechanicFirstView = document.getElementById("mechanic-first-view");
+  //       const form = document.getElementById("form-screen");
+  //       const slider = document.getElementById("slider");
+  //       const currentPlan = document.getElementById("current-plan");
+  //       currentPlan.value = "今は情報収集したい";
+  //       const offerLabel = document.getElementById("offer-label");
 
-      intensionDialog.classList.add("invisible");
-      mechanicFirstView.classList.add("invisible");
-      form.classList.remove("invisible");
-      slider.classList.add("invisible");
-      offerLabel.classList.remove("invisible");
-      fireConversion(1);
-    });
+  //       intensionDialog.classList.add("invisible");
+  //       mechanicFirstView.classList.add("invisible");
+  //       form.classList.remove("invisible");
+  //       slider.classList.add("invisible");
+  //       offerLabel.classList.remove("invisible");
+  //       fireConversion(1);
+  //     });
+
+  /**
+   * fvボタン（近いうちに転職したい）
+   */
+  document.querySelector("#fv-btn-upper").addEventListener("click", () => {
+    console.log("fv-btn-upper click");
+    const mechanicFirstView = document.getElementById("mechanic-first-view");
+    const form = document.getElementById("form-screen");
+    const slider = document.getElementById("slider");
+    const currentPlan = document.getElementById("current-plan");
+    currentPlan.value = "近いうちに転職したい";
+    const offerLabel = document.getElementById("offer-label");
+    const fvBtnWrapper = document.getElementById("fv-btn-wrapper");
+    const operaterZone = document.getElementById("operater-zone");
+
+    mechanicFirstView.classList.add("invisible");
+    form.classList.remove("invisible");
+    slider.classList.add("invisible");
+    fvBtnWrapper.classList.add("invisible");
+    operaterZone.classList.add("invisible");
+    offerLabel.classList.remove("invisible");
+    fireConversion(1);
+  });
+
+  /**
+   * fvボタン（今は情報収集したい）
+   */
+  document.querySelector("#fv-btn-bottom").addEventListener("click", () => {
+    console.log("fv-btn-bottom click");
+    const mechanicFirstView = document.getElementById("mechanic-first-view");
+    const form = document.getElementById("form-screen");
+    const slider = document.getElementById("slider");
+    const currentPlan = document.getElementById("current-plan");
+    currentPlan.value = "今は情報収集したい";
+    const offerLabel = document.getElementById("offer-label");
+    const fvBtnWrapper = document.getElementById("fv-btn-wrapper");
+    const operaterZone = document.getElementById("operater-zone");
+
+    mechanicFirstView.classList.add("invisible");
+    form.classList.remove("invisible");
+    slider.classList.add("invisible");
+    fvBtnWrapper.classList.add("invisible");
+    operaterZone.classList.add("invisible");
+    offerLabel.classList.remove("invisible");
+    fireConversion(1);
+  });
 
   /**
    * 利用規約モーダルを閉じる（×ボタン）
@@ -252,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
         prevBtn.classList.remove("invisible");
         nextBtn.classList.remove("invisible");
         submitBtn.classList.add("invisible");
-        slider.classList.remove("invisible");
+        slider.classList.add("invisible");
 
         if (validateFormThirdQuestion()) {
           addDecorationAfterInputComplete();
