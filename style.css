@@ -84,7 +84,7 @@ FV（オペレーターのメッセージ）
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1.2rem;
+  margin: 1.2rem 1rem 0 1rem;
 }
 
 .operater-zone.invisible {
@@ -107,7 +107,7 @@ FV（オペレーターのメッセージ）
   padding: 0.6rem 0.5rem 0.7rem 0.5rem;
   border-radius: 5px;
   font-size: 0.8rem;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .operater-message:nth-child(1) {

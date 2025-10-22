@@ -12,8 +12,21 @@
 
 	<link rel="stylesheet" href="./complete.css" />
 
+
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-MFZ6WSSC');</script>
+	<!-- End Google Tag Manager -->
+
+
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=GT-WVGNB756"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16680263633"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
@@ -38,15 +51,31 @@
 			s.parentNode.insertBefore(t, s)
 		}(window, document, 'script',
 			'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '765841712773389');
+		fbq('init', '1762857767709436');
 		fbq('track', 'PageView');
 	</script>
 	<noscript><img height="1" width="1" style="display:none"
-			src="https://www.facebook.com/tr?id=765841712773389&ev=PageView&noscript=1" /></noscript>
+			src="https://www.facebook.com/tr?id=1762857767709436&ev=PageView&noscript=1" /></noscript>
 	<!-- End Meta Pixel Code -->
+
+
+	<!-- Yahooタグ -->
+	<script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+	<script>
+		window.yjDataLayer = window.yjDataLayer || [];
+		function ytag() { yjDataLayer.push(arguments); }
+		ytag({ "type": "ycl_cookie", "config": { "ycl_use_non_cookie_storage": true } });
+	</script>
+	<!-- End Yahooタグ -->
+
 </head>
 
 <body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFZ6WSSC" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
 	<div class="body-inner">
 		<header>
 			<img class="header-logo" src="./img/company.webp" alt="">
@@ -230,28 +259,28 @@
 						const uTmMediumHtml = paramsHtml.get("utm_medium") || "";
 						switch (platformHtml) {
 							case "meta":
-								fbq("track", "Lead", {
-									content_name: "auto_mechanic_mendan",
-									value: 2000.0,
-									currency: "JPY",
-									lead_type: 'mechanic_interview_register'
-								});
+								// fbq("track", "Lead", {
+								// 	content_name: "auto_mechanic_mendan",
+								// 	value: 2000.0,
+								// 	currency: "JPY",
+								// 	lead_type: 'mechanic_interview_register'
+								// });
 								break;
 							case "google":
 								switch (uTmMediumHtml) {
 									case "search":
-										gtag('event', 'conversion', {
-											'send_to': 'AW-16680263633/JYZCCOLB-IYbENG_4pE-',
-											'value': 3000.0,
-											'currency': 'JPY'
-										});
+										// gtag('event', 'conversion', {
+										// 	'send_to': 'AW-16680263633/JYZCCOLB-IYbENG_4pE-',
+										// 	'value': 3000.0,
+										// 	'currency': 'JPY'
+										// });
 										break;
 									case "display":
-										gtag('event', 'conversion', {
-											'send_to': 'AW-16680263633/Q6C1CJiVgpAbENG_4pE-',
-											'value': 2000.0,
-											'currency': 'JPY'
-										});
+										// gtag('event', 'conversion', {
+										// 	'send_to': 'AW-16680263633/Q6C1CJiVgpAbENG_4pE-',
+										// 	'value': 2000.0,
+										// 	'currency': 'JPY'
+										// });
 										break;
 									default:
 										break;

@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slider = document.getElementById("slider");
     const currentPlan = document.getElementById("current-plan");
     currentPlan.value = "近いうちに転職したい";
-    const offerLabel = document.getElementById("offer-label");
+    // const offerLabel = document.getElementById("offer-label");
     const fvBtnWrapper = document.getElementById("fv-btn-wrapper");
     const operaterZone = document.getElementById("operater-zone");
 
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.classList.add("invisible");
     fvBtnWrapper.classList.add("invisible");
     operaterZone.classList.add("invisible");
-    offerLabel.classList.remove("invisible");
+    // offerLabel.classList.remove("invisible");
     fireConversion(1);
   });
 
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slider = document.getElementById("slider");
     const currentPlan = document.getElementById("current-plan");
     currentPlan.value = "今は情報収集したい";
-    const offerLabel = document.getElementById("offer-label");
+    // const offerLabel = document.getElementById("offer-label");
     const fvBtnWrapper = document.getElementById("fv-btn-wrapper");
     const operaterZone = document.getElementById("operater-zone");
 
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.classList.add("invisible");
     fvBtnWrapper.classList.add("invisible");
     operaterZone.classList.add("invisible");
-    offerLabel.classList.remove("invisible");
+    // offerLabel.classList.remove("invisible");
     fireConversion(1);
   });
 
@@ -287,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
         prevBtn.classList.remove("invisible");
         nextBtn.classList.add("invisible");
         submitBtn.classList.add("invisible");
-        slider.classList.add("invisible");
         slider.classList.add("invisible");
         checkCheckboxAndRadioForm(nowCurrentPage);
         fireConversion(2);
@@ -961,7 +960,7 @@ document.addEventListener("DOMContentLoaded", () => {
               fireGoogleConversionZeroByDisplay();
               break;
             case "search":
-              fireGoogleConversionZeroBySearch();
+              //   fireGoogleConversionZeroBySearch();
               fireGa4CvZeroByGoogle();
               break;
             default:
@@ -983,7 +982,7 @@ document.addEventListener("DOMContentLoaded", () => {
               fireGoogleConversionFirstByDisplay();
               break;
             case "search":
-              fireGoogleConversionFirstBySearch();
+              //   fireGoogleConversionFirstBySearch();
               fireGa4CvFirstByGoogle();
               break;
             default:
@@ -1004,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", () => {
               fireGoogleConversionSecondByDisplay();
               break;
             case "search":
-              fireGoogleConversionSecondBySearch();
+              //   fireGoogleConversionSecondBySearch();
               fireGa4CvSecondByGoogle();
               break;
             default:
@@ -1026,7 +1025,7 @@ document.addEventListener("DOMContentLoaded", () => {
               fireGoogleConversionThirdByDisplay();
               break;
             case "search":
-              fireGoogleConversionThirdBySearch();
+              //   fireGoogleConversionThirdBySearch();
               fireGa4CvThirdByGoogle();
               break;
             default:
@@ -1051,11 +1050,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/BeUaCNbB-IYbENG_4pE-",
-      value: 0.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/BeUaCNbB-IYbENG_4pE-",
+    //   value: 0.0,
+    //   currency: "JPY",
+    // });
   }
 
   /**
@@ -1066,13 +1065,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/7wPwCOyP64YbENG_4pE-",
-      value: 0.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/7wPwCOyP64YbENG_4pE-",
+    //   value: 0.0,
+    //   currency: "JPY",
+    // });
 
-    isTransitedFirstPage = true;
+    // isTransitedFirstPage = true;
   }
 
   /**
@@ -1083,13 +1082,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/0w__CNPB-IYbENG_4pE-",
-      value: 0.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/0w__CNPB-IYbENG_4pE-",
+    //   value: 0.0,
+    //   currency: "JPY",
+    // });
 
-    isTransitedSecondPage = true;
+    // isTransitedSecondPage = true;
   }
 
   /**
@@ -1100,13 +1099,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/tZL5CNnB-IYbENG_4pE-",
-      value: 0.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/tZL5CNnB-IYbENG_4pE-",
+    //   value: 0.0,
+    //   currency: "JPY",
+    // });
 
-    isTransitedThreePage = true;
+    // isTransitedThreePage = true;
   }
 
   /**
@@ -1117,13 +1116,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/wI2eCNzB-IYbENG_4pE-",
-      value: 0.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/wI2eCNzB-IYbENG_4pE-",
+    //   value: 0.0,
+    //   currency: "JPY",
+    // });
 
-    isTransitedFourPage = true;
+    // isTransitedFourPage = true;
   }
 
   /***************************************
@@ -1138,11 +1137,11 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("return");
       return;
     }
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/Jn76CIaVgpAbENG_4pE-",
-      value: 0.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/Jn76CIaVgpAbENG_4pE-",
+    //   value: 0.0,
+    //   currency: "JPY",
+    // });
   }
 
   /**
@@ -1152,11 +1151,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isTransitedFirstPage || isTest) {
       return;
     }
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/fbVNCImVgpAbENG_4pE-",
-      value: 0.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/fbVNCImVgpAbENG_4pE-",
+    //   value: 0.0,
+    //   currency: "JPY",
+    // });
 
     isTransitedFirstPage = true;
   }
@@ -1168,11 +1167,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isTransitedSecondPage || isTest) {
       return;
     }
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/_e8XCIyVgpAbENG_4pE-",
-      value: 10.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/_e8XCIyVgpAbENG_4pE-",
+    //   value: 10.0,
+    //   currency: "JPY",
+    // });
 
     isTransitedSecondPage = true;
   }
@@ -1184,11 +1183,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isTransitedThreePage || isTest) {
       return;
     }
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/A71aCI-VgpAbENG_4pE-",
-      value: 100.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/A71aCI-VgpAbENG_4pE-",
+    //   value: 100.0,
+    //   currency: "JPY",
+    // });
 
     isTransitedThreePage = true;
   }
@@ -1200,11 +1199,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isTransitedFourPage || isTest) {
       return;
     }
-    gtag("event", "conversion", {
-      send_to: "AW-16680263633/sdQiCJKVgpAbENG_4pE-",
-      value: 200.0,
-      currency: "JPY",
-    });
+    // gtag("event", "conversion", {
+    //   send_to: "AW-16680263633/sdQiCJKVgpAbENG_4pE-",
+    //   value: 200.0,
+    //   currency: "JPY",
+    // });
 
     isTransitedFourPage = true;
   }
@@ -1225,9 +1224,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvStartByMeta");
 
-    gtag("event", "mechanic_ankert_v1_form_start", {
+    gtag("event", "mechanic_ankert_v2_form_start", {
       event_category: "form",
-      event_label: "mechanic_ankert_v1",
+      event_label: "mechanic_ankert_v2",
     });
   }
 
@@ -1243,13 +1242,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvZeroByMeta");
 
-    gtag("event", "mechanic_ankert_v1_0", {
+    gtag("event", "mechanic_ankert_v2_0", {
       event_category: "form",
-      event_label: "mechanic_ankert_v1",
+      event_label: "mechanic_ankert_v2",
     });
   }
   /**
-   * ga4CV1を発火する(どんな資格をお持ちですか？)
+   * ga4CV2を発火する(どんな資格をお持ちですか？)
    */
   function fireGa4CvFirstByMeta() {
     console.log("fireGa4CvFirstByMeta");
@@ -1260,9 +1259,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvFirstByMeta");
 
-    gtag("event", "mechanic_ankert_v1_1", {
+    gtag("event", "mechanic_ankert_v2_1", {
       event_category: "form",
-      event_label: "mechanic_ankert_v1",
+      event_label: "mechanic_ankert_v2",
     });
 
     isTransitedFirstPage = true;
@@ -1280,9 +1279,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvSecondByMeta");
 
-    gtag("event", "mechanic_ankert_v1_2", {
+    gtag("event", "mechanic_ankert_v2_2", {
       event_category: "form",
-      event_label: "mechanic_ankert_v1",
+      event_label: "mechanic_ankert_v2",
     });
 
     isTransitedSecondPage = true;
@@ -1300,9 +1299,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvThirdByMeta");
 
-    gtag("event", "mechanic_ankert_v1_3", {
+    gtag("event", "mechanic_ankert_v2_3", {
       event_category: "form",
-      event_label: "mechanic_ankert_v1",
+      event_label: "mechanic_ankert_v2",
     });
 
     isTransitedThreePage = true;
@@ -1320,9 +1319,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvSubmitByMeta");
 
-    gtag("event", "mechanic_ankert_v1_submit", {
+    gtag("event", "mechanic_ankert_v2_submit", {
       event_category: "form",
-      event_label: "mechanic_ankert_v1",
+      event_label: "mechanic_ankert_v2",
     });
   }
 
@@ -1342,9 +1341,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvStartByGoogle");
 
-    gtag("event", "mechanic_ankert_v1_form_start_by_google_l", {
-      event_category: "form_by_google_l",
-      event_label: "mechanic_ankert_v1_by_google_l",
+    gtag("event", "mechanic_ankert_v2_form_start_g", {
+      event_category: "form_by_g",
+      event_label: "mechanic_ankert_v2_by_g",
     });
   }
 
@@ -1360,9 +1359,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvZeroByGoogle");
 
-    gtag("event", "mechanic_ankert_v1_0_by_google_l", {
-      event_category: "form_by_google_l",
-      event_label: "mechanic_ankert_v1_by_google_l",
+    gtag("event", "mechanic_ankert_v2_0_g", {
+      event_category: "form_by_g",
+      event_label: "mechanic_ankert_v2_by_g",
     });
   }
   /**
@@ -1377,9 +1376,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvFirstByGoogle");
 
-    gtag("event", "mechanic_ankert_v1_1_by_google_l", {
-      event_category: "form_by_google_l",
-      event_label: "mechanic_ankert_v1_by_google_l",
+    gtag("event", "mechanic_ankert_v2_1_g", {
+      event_category: "form_by_g",
+      event_label: "mechanic_ankert_v2_by_g",
     });
 
     isTransitedFirstPage = true;
@@ -1397,9 +1396,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvSecondByGoogle");
 
-    gtag("event", "mechanic_ankert_v1_2_by_google_l", {
-      event_category: "form_by_google_l",
-      event_label: "mechanic_ankert_v1_by_google_l",
+    gtag("event", "mechanic_ankert_v2_2_g", {
+      event_category: "form_by_g",
+      event_label: "mechanic_ankert_v2_by_g",
     });
 
     isTransitedSecondPage = true;
@@ -1417,9 +1416,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvThirdByGoogle");
 
-    gtag("event", "mechanic_ankert_v1_3_by_google_l", {
-      event_category: "form_by_google_l",
-      event_label: "mechanic_ankert_v1_by_google_l",
+    gtag("event", "mechanic_ankert_v2_3_g", {
+      event_category: "form_by_g",
+      event_label: "mechanic_ankert_v2_by_g",
     });
 
     isTransitedThreePage = true;
@@ -1437,9 +1436,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("fire fireGa4CvSubmitByGoogle");
 
-    gtag("event", "mechanic_ankert_v1_submit_by_google_l", {
-      event_category: "form_by_google_l",
-      event_label: "mechanic_ankert_v1_by_google_l",
+    gtag("event", "mechanic_ankert_v2_submit_g", {
+      event_category: "form_by_g",
+      event_label: "mechanic_ankert_v2_by_g",
     });
   }
 });

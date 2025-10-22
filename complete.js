@@ -9,28 +9,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const uTmMediumJs = paramsJs.get("utm_medium") || "";
     switch (platformJs) {
       case "meta":
-        fbq("track", "Lead", {
-          content_name: "auto_mechanic_register",
-          value: 1000.0,
-          currency: "JPY",
-          lead_type: "mechanic_entry_register",
-        });
+        // fbq("track", "Lead", {
+        //   content_name: "auto_mechanic_register",
+        //   value: 1000.0,
+        //   currency: "JPY",
+        //   lead_type: "mechanic_entry_register",
+        // });
         break;
       case "google":
         switch (uTmMediumJs) {
           case "search":
             gtag("event", "conversion", {
-              send_to: "AW-16680263633/U7UBCN_B-IYbENG_4pE-",
+              send_to: "AW-16680263633/oYSfCI2tsrEbENG_4pE-",
               value: 1000.0,
               currency: "JPY",
             });
             break;
           case "display":
-            gtag("event", "conversion", {
-              send_to: "AW-16680263633/4dzpCJWVgpAbENG_4pE-",
-              value: 1000.0,
-              currency: "JPY",
-            });
+            // gtag("event", "conversion", {
+            //   send_to: "AW-16680263633/4dzpCJWVgpAbENG_4pE-",
+            //   value: 1000.0,
+            //   currency: "JPY",
+            // });
             break;
           default:
             break;
