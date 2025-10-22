@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = {};
     const params = new URLSearchParams(window.location.search);
     //trueの時はテストモード（reCAPTCHA無効）
-    formData["localTest"] = true;
+    formData["localTest"] = false;
 
     inputs.forEach((input) => {
       const name = input.name;
