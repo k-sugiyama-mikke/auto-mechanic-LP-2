@@ -459,6 +459,11 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.gclid = params.get("gclid") || "";
 
         break;
+      case "yahoo":
+        formData.adMedia = "yahoo";
+        formData.utmMedium = params.get("utm_medium") || "";
+        break;
+
       default:
         break;
     }

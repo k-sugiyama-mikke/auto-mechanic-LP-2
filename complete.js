@@ -36,6 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
         }
         break;
+
+      case "yahoo":
+        ytag({
+          type: "yss_conversion",
+          config: {
+            yahoo_conversion_id: "1001380568",
+            yahoo_conversion_label: "nEWvCNydg7EbELzwx-lB",
+            yahoo_conversion_value: "8000",
+          },
+        });
+
+        break;
+
       default:
         break;
     }
